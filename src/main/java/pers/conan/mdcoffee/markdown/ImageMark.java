@@ -3,6 +3,11 @@ package pers.conan.mdcoffee.markdown;
 import pers.conan.mdcoffee.text.MarkDown;
 import pers.conan.mdcoffee.util.MarkUtil;
 
+/**
+ * 图片标记
+ * @author Conan
+ *
+ */
 public class ImageMark extends BaseMark {
     
     /**

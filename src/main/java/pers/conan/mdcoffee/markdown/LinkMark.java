@@ -2,6 +2,11 @@ package pers.conan.mdcoffee.markdown;
 
 import pers.conan.mdcoffee.text.MarkDown;
 
+/**
+ * 链接标记
+ * @author Conan
+ *
+ */
 public class LinkMark extends BaseMark {
     
     /**

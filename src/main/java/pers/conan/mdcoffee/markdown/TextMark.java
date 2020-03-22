@@ -3,6 +3,11 @@ package pers.conan.mdcoffee.markdown;
 import pers.conan.mdcoffee.text.MarkDown;
 import pers.conan.mdcoffee.text.Type;
 
+/**
+ * 文本标记
+ * @author Conan
+ *
+ */
 public class TextMark extends BaseMark {
 
     public TextMark(String text, int type) {
@@ -70,19 +75,6 @@ public class TextMark extends BaseMark {
             }
         }
     }
-    
-    @Override
-    public String markInclusions() {
-        StringBuilder result = new StringBuilder("");
-        for (int i = 0; i < this.inclusions.size(); i ++) {
-            if (i == 0) {
-                result.append(inclusions.get(i).translate());  // 第一个标记不加空格
-            } else {
-                result.append(MarkDown.SPACE + inclusions.get(i).translate());  // 不是第一个标记前面加空格
-            }
-        }
-        return result.toString();
-    }
 
     @Override
     public String translate() {
@@ -92,7 +84,5 @@ public class TextMark extends BaseMark {
         }
         return this.translated;
     }
-
-    
 
 }

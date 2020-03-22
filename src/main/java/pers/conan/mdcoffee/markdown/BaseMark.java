@@ -3,8 +3,14 @@ package pers.conan.mdcoffee.markdown;
 import java.util.ArrayList;
 import java.util.List;
 
+import pers.conan.mdcoffee.text.MarkDown;
 import pers.conan.mdcoffee.text.Type;
 
+/**
+ * 基础标记
+ * 其他标记类型的父类
+ * @author Conan
+ */
 public abstract class BaseMark implements Markable, Cloneable {
     
     /**
@@ -37,7 +43,21 @@ public abstract class BaseMark implements Markable, Cloneable {
 
     public abstract String translate();
     
-    public abstract String markInclusions();
+    /**
+     * 标记内含标记
+     * @return
+     */
+    public String markInclusions() {
+        StringBuilder result = new StringBuilder("");
+        for (int i = 0; i < this.inclusions.size(); i ++) {
+            if (i == 0) {
+                result.append(inclusions.get(i).translate());  // 第一个标记不加空格
+            } else {
+                result.append(MarkDown.SPACE + inclusions.get(i).translate());  // 不是第一个标记前面加空格
+            }
+        }
+        return result.toString();
+    }
 
     /**
      * 附着下一个标记

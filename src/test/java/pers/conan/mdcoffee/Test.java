@@ -32,7 +32,6 @@ public class Test {
         textMark.append(textMark);  // 附着一个标记
         
         textMark2.append(textMark);  // 附着一个标记
-        textMark.append(textMark2);  // 附着一个标记
         
         output("d:/test.md", textMark);
         
