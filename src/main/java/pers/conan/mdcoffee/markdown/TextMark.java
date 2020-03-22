@@ -1,5 +1,8 @@
 package pers.conan.mdcoffee.markdown;
 
+import pers.conan.mdcoffee.text.MarkDown;
+import pers.conan.mdcoffee.text.Type;
+
 public class TextMark extends BaseMark {
 
     public TextMark(String text, int type) {
@@ -14,8 +17,21 @@ public class TextMark extends BaseMark {
 
     @Override
     public void mark() {
-        // TODO Auto-generated method stub
-
+        if (this.marks != null) {  // 有内含标记集合
+            
+        } else {  // 无内含标记集合
+            switch (this.type) {
+                case Type.BOLD :
+                    this.text = MarkDown.BOLD + this.text + MarkDown.BOLD;
+                    break;
+                case Type.ITALICS :
+                    this.text = MarkDown.ITATLICS + this.text + MarkDown.ITATLICS;
+                    break;
+                case Type.BOLD_ITALICS :
+                    this.text = MarkDown.ITATLICS + this.text + MarkDown.ITATLICS;
+                    break;
+            }
+        }
     }
 
     @Override

@@ -14,9 +14,6 @@ public class MarkDown {
     /** 星号 */
     public static final char ASTER = '*';
     
-    /** 下划线 */
-    public static final char UNDER_LINE = '_';
-    
     /** 加号 */
     public static final char PLUS = '+';
     
@@ -25,6 +22,9 @@ public class MarkDown {
     
     /** 点 */
     public static final char POINT = '.';
+    
+    /** 下划线 */
+    public static final String UNDER_LINE = "_";
     
     /** TAB(换挡) */
     public static final String TAB = "\t";
@@ -64,6 +64,19 @@ public class MarkDown {
     
     /** 换行 */
     public static final char NEXT = '\r';
+    
+    /** 粗体 */
+    public static final String BOLD = "**";
+    /** 斜体 */
+    public static final String ITATLICS = "*";
+    /** 粗斜体 */
+    public static final String BOLD_ITATLICS = "***";
+    /** 下划线开头 */
+    public static final String UNDER_LINE_1 = "<u>";
+    /** 下划线结束 */
+    public static final String UNDER_LINE_2 = "</u>";
+    /** 删除线 */
+    public static final String DELETE = "~~";
 
     // -------------------------------------
     

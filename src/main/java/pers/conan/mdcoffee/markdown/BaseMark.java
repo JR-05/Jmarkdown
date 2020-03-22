@@ -1,5 +1,6 @@
 package pers.conan.mdcoffee.markdown;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class BaseMark implements Markable {
@@ -13,6 +14,12 @@ public abstract class BaseMark implements Markable {
      * 标记内容
      */
     protected String text;
+    
+    /**
+     * 转换后的内容
+     */
+    protected String translated;
+    
     
     /**
      * 下一个标记
@@ -40,9 +47,15 @@ public abstract class BaseMark implements Markable {
         }
     }
 
-    public void put(Markable mark) {
-        // TODO Auto-generated method stub
-        
+    /**
+     * 添加内含标记
+     * @param mark
+     */
+    public void put(BaseMark mark) {
+        if (this.marks == null) {
+            this.marks = new ArrayList<BaseMark>();
+        }
+        this.marks.add(mark);
     }
     
     /**

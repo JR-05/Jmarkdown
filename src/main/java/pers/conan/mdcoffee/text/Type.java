@@ -68,8 +68,10 @@ public class Type {
     public static final int ITALICS = 4020;
     /** 粗体 */
     public static final int BOLD = 4030;
+    /** 粗斜体 */
+    public static final int BOLD_ITALICS = 4040;
     /** 下划线 */
-    public static final int UNDER_LINE = 4040;
+    public static final int UNDER_LINE = 4050;
     
     /** 空行 */
     public static final int BLANK = 8888;
