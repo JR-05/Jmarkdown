@@ -5,7 +5,7 @@ import java.util.List;
 
 import pers.conan.mdcoffee.text.Type;
 
-public abstract class BaseMark implements Markable {
+public abstract class BaseMark implements Markable, Cloneable {
     
     /**
      * 标记类型
@@ -40,12 +40,17 @@ public abstract class BaseMark implements Markable {
     public abstract String markInclusions();
 
     /**
-     * 添加下一个标记
+     * 附着下一个标记
      * @param mark
      */
     public void append(BaseMark next) {
         if (this.next == null) {  // 没有下一个标记
-            this.next = next;
+            try {
+                this.next = (BaseMark) next.clone();
+            } catch (CloneNotSupportedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
         } else {  // 有下一个标记
             this.next.append(next);
         }
@@ -73,7 +78,7 @@ public abstract class BaseMark implements Markable {
      * 构造方法
      */
     public BaseMark(BaseMark mark) {
-        this.next = mark;
+        this.next.append(this);
     }
     
     /**
