@@ -1,6 +1,8 @@
 package pers.conan.mdcoffee.markdown;
 
+import pers.conan.mdcoffee.text.MarkDown;
 import pers.conan.mdcoffee.text.Type;
+import pers.conan.mdcoffee.util.MarkUtil;
 
 /**
  * 标题标记
@@ -27,20 +29,56 @@ public class TitleMark extends BaseMark {
 
     @Override
     public void mark() {
-        // TODO Auto-generated method stub
+        if (MarkUtil.isEmpty(this.inclusions) == false) {  // 有内含标记集合
+            switch (this.level) {  // 判断标题等级
+            case Type.TITLE_ONE :  // 一级标题
+                this.translated = MarkDown.TITLE_H1 + MarkDown.SPACE + this.text + this.markInclusions();
+                break;
+            case Type.TITLE_TWO :  // 二级标题
+                this.translated = MarkDown.TITLE_H2 + MarkDown.SPACE + this.text + this.markInclusions();
+                break;
+            case Type.TITLE_THREE :  // 三级标题
+                this.translated = MarkDown.TITLE_H3 + MarkDown.SPACE + this.text + this.markInclusions();
+                break;
+            case Type.TITLE_FOUR :  // 四级标题
+                this.translated = MarkDown.TITLE_H4 + MarkDown.SPACE + this.text + this.markInclusions();
+                break;
+            case Type.TITLE_FIVE :  // 五级标题
+                this.translated = MarkDown.TITLE_H5 + MarkDown.SPACE + this.text + this.markInclusions();
+                break;
+            case Type.TITLE_SIX :  // 六级标题
+                this.translated = MarkDown.TITLE_H6 + MarkDown.SPACE + this.text + this.markInclusions();
+                break;
+            default :  // 默认
+                this.translated = MarkDown.TITLE_H1 + MarkDown.SPACE + this.text + this.markInclusions();
+                break; 
+            }
+        } else {  // 无内含标记集合
+            switch (this.level) {  // 判断标题等级
+                case Type.TITLE_ONE :  // 一级标题
+                    this.translated = MarkDown.TITLE_H1 + MarkDown.SPACE + this.text;
+                    break;
+                case Type.TITLE_TWO :  // 二级标题
+                    this.translated = MarkDown.TITLE_H2 + MarkDown.SPACE + this.text;
+                    break;
+                case Type.TITLE_THREE :  // 三级标题
+                    this.translated = MarkDown.TITLE_H3 + MarkDown.SPACE + this.text;
+                    break;
+                case Type.TITLE_FOUR :  // 四级标题
+                    this.translated = MarkDown.TITLE_H4 + MarkDown.SPACE + this.text;
+                    break;
+                case Type.TITLE_FIVE :  // 五级标题
+                    this.translated = MarkDown.TITLE_H5 + MarkDown.SPACE + this.text;
+                    break;
+                case Type.TITLE_SIX :  // 六级标题
+                    this.translated = MarkDown.TITLE_H6 + MarkDown.SPACE + this.text;
+                    break;
+                default :  // 默认
+                    this.translated = MarkDown.TITLE_H1 + MarkDown.SPACE + this.text;
+                    break; 
+            }
+        }
         
-    }
-
-    @Override
-    public String translate() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public String markInclusions() {
-        // TODO Auto-generated method stub
-        return null;
     }
 
 }

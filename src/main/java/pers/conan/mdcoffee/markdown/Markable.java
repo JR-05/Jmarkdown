@@ -12,10 +12,4 @@ public interface Markable {
      */
     void mark();
     
-    /**
-     * 转换成文本内容
-     * @return
-     */
-    String translate();
-    
 }

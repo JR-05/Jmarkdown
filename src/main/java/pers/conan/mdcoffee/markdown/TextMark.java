@@ -2,6 +2,7 @@ package pers.conan.mdcoffee.markdown;
 
 import pers.conan.mdcoffee.text.MarkDown;
 import pers.conan.mdcoffee.text.Type;
+import pers.conan.mdcoffee.util.MarkUtil;
 
 /**
  * 文本标记
@@ -31,7 +32,7 @@ public class TextMark extends BaseMark {
 
     @Override
     public void mark() {
-        if (this.inclusions != null) {  // 有内含标记集合
+        if (MarkUtil.isEmpty(this.inclusions) == false) {  // 有内含标记集合
             switch (this.type) {
                 case Type.BOLD :
                     this.translated = MarkDown.BOLD + this.markInclusions() + MarkDown.BOLD;
@@ -74,15 +75,6 @@ public class TextMark extends BaseMark {
                     break;
             }
         }
-    }
-
-    @Override
-    public String translate() {
-        this.mark();
-        if (this.next != null) {
-            return this.translated + MarkDown.NEXT + this.next.translate();
-        }
-        return this.translated;
     }
 
 }

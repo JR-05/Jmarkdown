@@ -41,7 +41,17 @@ public abstract class BaseMark implements Markable, Cloneable {
 
     public abstract void mark();
 
-    public abstract String translate();
+    /**
+     * 内容转换输出
+     * @return
+     */
+    public String translate() {
+        this.mark();
+        if (this.next != null) {
+            return this.translated + MarkDown.NEXT + this.next.translate();
+        }
+        return this.translated;
+    }
     
     /**
      * 标记内含标记

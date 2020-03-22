@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 
+import pers.conan.mdcoffee.markdown.BaseMark;
 import pers.conan.mdcoffee.markdown.Markable;
 import pers.conan.mdcoffee.markdown.TextMark;
 import pers.conan.mdcoffee.text.Type;
@@ -38,7 +39,7 @@ public class Test {
         System.out.println(textMark.translate());
     }
     
-    public static void output(String file, Markable mark) {
+    public static void output(String file, BaseMark mark) {
         FileOutputStream fos = null;
         OutputStreamWriter osw = null;
         BufferedWriter bw = null;
