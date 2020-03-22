@@ -36,6 +36,8 @@ public abstract class BaseMark implements Markable {
     public abstract void mark();
 
     public abstract String translate();
+    
+    public abstract String markInclusions();
 
     /**
      * 添加下一个标记
