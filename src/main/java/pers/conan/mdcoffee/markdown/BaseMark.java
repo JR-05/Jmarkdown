@@ -44,7 +44,7 @@ public abstract class BaseMark implements Markable {
      * @param mark
      */
     public void append(BaseMark next) {
-        if (this.next != null) {  // 没有下一个标记
+        if (this.next == null) {  // 没有下一个标记
             this.next = next;
         } else {  // 有下一个标记
             this.next.append(next);
@@ -80,6 +80,38 @@ public abstract class BaseMark implements Markable {
      * 构造方法
      */
     public BaseMark() {
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public String getTranslated() {
+        return translated;
+    }
+
+    public void setTranslated(String translated) {
+        this.translated = translated;
+    }
+
+    public BaseMark getNext() {
+        return next;
+    }
+
+    public void setNext(BaseMark next) {
+        this.next = next;
     }
 
 }

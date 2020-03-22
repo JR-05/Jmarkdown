@@ -15,6 +15,11 @@ public class TextMark extends BaseMark {
         this.type = type;
     }
     
+    public TextMark(String text) {
+        super();
+        this.type = Type.OTHER;
+    }
+    
     public TextMark() {
         super();
     }
@@ -83,7 +88,7 @@ public class TextMark extends BaseMark {
     public String translate() {
         this.mark();
         if (this.next != null) {
-            return this.translated + MarkDown.SPACE + this.next.translate();
+            return this.translated + MarkDown.NEXT + this.next.translate();
         }
         return this.translated;
     }
