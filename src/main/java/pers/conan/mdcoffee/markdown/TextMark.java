@@ -17,7 +17,7 @@ public class TextMark extends BaseMark {
 
     @Override
     public void mark() {
-        if (this.marks != null) {  // 有内含标记集合
+        if (this.inclusions != null) {  // 有内含标记集合
             
         } else {  // 无内含标记集合
             switch (this.type) {
