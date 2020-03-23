@@ -8,7 +8,9 @@ import java.io.OutputStreamWriter;
 
 import pers.conan.mdcoffee.markdown.BaseMark;
 import pers.conan.mdcoffee.markdown.Markable;
+import pers.conan.mdcoffee.markdown.OrderMark;
 import pers.conan.mdcoffee.markdown.TextMark;
+import pers.conan.mdcoffee.markdown.UnOrderMark;
 import pers.conan.mdcoffee.text.Type;
 import pers.conan.mdcoffee.util.IOUtil;
 
@@ -21,22 +23,24 @@ public class Test {
         TextMark deleteMark = new TextMark("This is a delete MarkDown.", Type.DELETE);
         TextMark underLineMark = new TextMark("This is an underline MarkDown.", Type.UNDER_LINE);
         
-        TextMark textMark = new TextMark();
-        textMark.put(boldMark);
-        textMark.put(italicMark);
-        textMark.put(deleteMark);
-        textMark.put(underLineMark);
+        UnOrderMark uoMark = new UnOrderMark();
+        uoMark.put(boldMark);
+        uoMark.put(italicMark);
+        uoMark.put(deleteMark);
+        uoMark.put(underLineMark);
         
-        TextMark textMark2 = new TextMark();
-        textMark2.setText("Hello World.");
+        OrderMark oMark = new OrderMark();
+        oMark.put(boldMark);
+        oMark.put(italicMark);
+        oMark.put(deleteMark);
+        oMark.put(underLineMark);
         
-        textMark.append(textMark);  // 附着一个标记
+        uoMark.append(oMark);
         
-        textMark2.append(textMark);  // 附着一个标记
         
-        output("d:/test.md", textMark);
+        output("d:/test.md", uoMark);
         
-        System.out.println(textMark.translate());
+        System.out.println(uoMark.translate());
     }
     
     public static void output(String file, BaseMark mark) {

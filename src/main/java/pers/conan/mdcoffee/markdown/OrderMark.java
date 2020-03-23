@@ -11,13 +11,28 @@ import pers.conan.mdcoffee.util.MarkUtil;
 public class OrderMark extends BaseMark {
     
     /**
+     * 构造方法
+     */
+    public OrderMark() {
+        super();
+    }
+
+    /**
+     * 构造方法
+     * @param mark
+     */
+    public OrderMark (BaseMark mark) {
+        super(mark);
+    }
+    
+    /**
      * 向有序列表里添加文本
      * @param line
      */
     public void put(String line) {
         this.put(new TextMark(line));
     }
-
+    
     @Override
     public void mark() {
         StringBuilder translate = new StringBuilder();
@@ -29,11 +44,22 @@ public class OrderMark extends BaseMark {
                 continue;  // 空行跳过
             }
             index ++;  // 索引自增
-            translate.append(index + MarkDown.POINT  // 索引+点
-                    + MarkDown.SPACE  // 空格
-                    + inclusion[i]);  // 文本内容
+            if (index == 1) {
+                translate.append(index 
+                        + String.valueOf(MarkDown.POINT)
+                        + String.valueOf(MarkDown.SPACE)
+                        + inclusion[i]);  // 文本内容
+            } else {
+                translate.append(
+                        String.valueOf(MarkDown.NEXT)
+                        + index 
+                        + String.valueOf(MarkDown.POINT)
+                        + String.valueOf(MarkDown.SPACE)  // 空格
+                        + inclusion[i]);  // 文本内容
+            }
+            
         }
-        translate.toString();
+        this.translated = translate.toString();
 
     }
     
@@ -43,7 +69,10 @@ public class OrderMark extends BaseMark {
      */
     @Override
     public String markInclusions() {
-        StringBuilder result = new StringBuilder("");
+        if (MarkUtil.isEmpty(this.inclusions)) {
+            return "";
+        }
+        StringBuilder result = new StringBuilder();
         for (int i = 0; i < this.inclusions.size(); i ++) {
             if (i == 0) {
                 result.append(inclusions.get(i).translate());  // 第一个标记不加换行符

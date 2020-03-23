@@ -11,6 +11,21 @@ import pers.conan.mdcoffee.util.MarkUtil;
 public class UnOrderMark extends BaseMark {
     
     /**
+     * 构造方法
+     */
+    public UnOrderMark() {
+        super();
+    }
+    
+    /**
+     * 构造方法
+     * @param mark
+     */
+    public UnOrderMark(BaseMark mark) {
+        super(mark);
+    }
+    
+    /**
      * 向无序列表里添加文本
      * @param line
      */
@@ -23,15 +38,27 @@ public class UnOrderMark extends BaseMark {
         StringBuilder translate = new StringBuilder();
         String[] inclusion = this.markInclusions().split(String.valueOf(MarkDown.NEXT));  // 解析内含标记
         
+        int index = 0;  // 索引
         for (int i = 0; i < inclusion.length; i ++) {
             if (MarkUtil.isEmpty(inclusion[i])) {
                 continue;  // 空行跳过
             }
-            translate.append(MarkDown.ASTER  // 星号 
-                    + MarkDown.SPACE  // 空格
-                    + inclusion[i]);  // 文本内容
+            index ++;
+            if (index == 1) {
+                translate.append(
+                        String.valueOf(MarkDown.ASTER)
+                        + String.valueOf(MarkDown.SPACE)
+                        + inclusion[i]);  // 文本内容
+            } else {
+                translate.append(
+                        String.valueOf(MarkDown.NEXT)
+                        + String.valueOf(MarkDown.ASTER)
+                        +  String.valueOf(MarkDown.SPACE)
+                        + inclusion[i]);  // 文本内容
+            }
+            
         }
-        translate.toString();
+        this.translated = translate.toString();
     }
     
     /**

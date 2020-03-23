@@ -108,7 +108,7 @@ public abstract class BaseMark implements Markable, Cloneable {
      * 构造方法
      */
     public BaseMark(BaseMark mark) {
-        this.next.append(this);
+        mark.append(this);
     }
     
     /**
