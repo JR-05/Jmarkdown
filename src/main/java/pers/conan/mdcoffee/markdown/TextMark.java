@@ -16,11 +16,6 @@ public class TextMark extends BaseMark {
         this.type = type;
     }
     
-    public TextMark(BaseMark mark, int type) {
-        super(mark);
-        this.type = type;
-    }
-    
     public TextMark(String text) {
         super();
         this.type = Type.OTHER;

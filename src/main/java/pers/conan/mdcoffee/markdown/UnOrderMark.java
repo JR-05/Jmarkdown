@@ -18,14 +18,6 @@ public class UnOrderMark extends BaseMark {
     }
     
     /**
-     * 构造方法
-     * @param mark
-     */
-    public UnOrderMark(BaseMark mark) {
-        super(mark);
-    }
-    
-    /**
      * 向无序列表里添加文本
      * @param line
      */

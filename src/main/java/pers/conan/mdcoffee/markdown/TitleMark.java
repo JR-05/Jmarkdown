@@ -26,6 +26,10 @@ public class TitleMark extends BaseMark {
         super(text);
         this.level = level;
     }
+    
+    public TitleMark(String text) {
+        super(text);
+    }
 
     @Override
     public void mark() {

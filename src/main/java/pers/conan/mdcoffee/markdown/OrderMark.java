@@ -18,14 +18,6 @@ public class OrderMark extends BaseMark {
     }
 
     /**
-     * 构造方法
-     * @param mark
-     */
-    public OrderMark (BaseMark mark) {
-        super(mark);
-    }
-    
-    /**
      * 向有序列表里添加文本
      * @param line
      */
