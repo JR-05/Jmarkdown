@@ -1,5 +1,6 @@
 package pers.conan.mdcoffee.markdown;
 
+import pers.conan.mdcoffee.exception.DisablePutException;
 import pers.conan.mdcoffee.text.MarkDown;
 import pers.conan.mdcoffee.util.MarkUtil;
 
@@ -22,7 +23,12 @@ public class UnOrderMark extends BaseMark {
      * @param line
      */
     public void put(String line) {
-        this.put(new TextMark(line));
+        try {
+            this.put(new TextMark(line));
+        } catch (DisablePutException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 
     @Override

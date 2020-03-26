@@ -3,6 +3,7 @@ package pers.conan.mdcoffee.markdown;
 import java.util.ArrayList;
 import java.util.List;
 
+import pers.conan.mdcoffee.exception.DisablePutException;
 import pers.conan.mdcoffee.text.MarkDown;
 import pers.conan.mdcoffee.text.Type;
 
@@ -89,8 +90,9 @@ public abstract class BaseMark implements Markable, Cloneable {
     /**
      * 添加内含标记
      * @param mark
+     * @throws DisablePutException 
      */
-    public void put(BaseMark inclusion) {
+    public void put(BaseMark inclusion) throws DisablePutException {
         if (this.inclusions == null) {
             this.inclusions = new ArrayList<BaseMark>();
         }
