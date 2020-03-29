@@ -3,7 +3,6 @@ package pers.conan.mdcoffee.markdown;
 import java.util.ArrayList;
 import java.util.List;
 
-import pers.conan.mdcoffee.exception.DisablePutException;
 import pers.conan.mdcoffee.util.MarkUtil;
 
 /**
