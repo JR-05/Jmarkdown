@@ -70,7 +70,7 @@ public class TableMark extends BaseMark {
             translate.append("| |");
         } else {  // 表行不为空
             for (int i = 0; i< this.rows.size(); i ++) {
-                translate.append(String.valueOf(MarkDown.NEXT) + this.rows.get(i));  // 逐行标记
+                translate.append(String.valueOf(MarkDown.NEXT) + this.rows.get(i).translate());  // 逐行标记
             }
         }
         translate.append(String.valueOf(MarkDown.NEXT));  // 表格标记的结尾需要换行

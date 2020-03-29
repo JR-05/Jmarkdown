@@ -13,7 +13,7 @@ import pers.conan.mdcoffee.util.MarkUtil;
 public class CellMark extends BaseMark {
     
     public CellMark(String text) {
-        super();
+        super(text);
     }
 
     @Override
