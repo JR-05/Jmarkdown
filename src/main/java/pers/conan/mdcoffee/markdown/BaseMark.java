@@ -38,12 +38,12 @@ public abstract class BaseMark implements Markable, Cloneable {
     /**
      * 内含标记集合
      */
-    protected List<BaseMark> inclusions;
+    protected List<BaseMark> inclusions = new ArrayList<BaseMark>();
 
     public abstract void mark();
 
     /**
-     * 内容转换输出
+     * 标记内容转换输出
      * @return
      */
     public String translate() {
@@ -93,9 +93,6 @@ public abstract class BaseMark implements Markable, Cloneable {
      * @throws DisablePutException 
      */
     public void put(BaseMark inclusion) throws DisablePutException {
-        if (this.inclusions == null) {
-            this.inclusions = new ArrayList<BaseMark>();
-        }
         this.inclusions.add(inclusion);
     }
     
