@@ -54,6 +54,14 @@ public class TableMark extends BaseMark {
     public void setRows(List<TableRowMark> rows) {
         this.rows = rows;
     }
+    
+    /**
+     * 添加表行标记
+     * @param row
+     */
+    public void put(TableRowMark row) {
+        this.rows.add(row);
+    }
 
     @Override
     public void mark() {

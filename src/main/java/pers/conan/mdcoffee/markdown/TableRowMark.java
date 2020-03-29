@@ -39,6 +39,14 @@ public class TableRowMark extends BaseMark {
     public void setRow(List<CellMark> row) {
         this.row = row;
     }
+    
+    /**
+     * 添加单元格标记
+     * @param cell
+     */
+    public void put(CellMark cell) {
+        this.row.add(cell);
+    }
 
     @Override
     public void mark() {

@@ -3,6 +3,7 @@ package pers.conan.mdcoffee.markdown;
 import java.util.ArrayList;
 import java.util.List;
 
+import pers.conan.mdcoffee.exception.DisablePutException;
 import pers.conan.mdcoffee.util.MarkUtil;
 
 /**
@@ -55,6 +56,14 @@ public class TableHeadMark extends BaseMark {
         }
         this.translated = translate.toString();  // 完成标记
         
+    }
+    
+    /**
+     * 添加单元格标记
+     * @param cell
+     */
+    public void put(CellMark cell) {
+        this.header.add(cell);
     }
     
     /**
