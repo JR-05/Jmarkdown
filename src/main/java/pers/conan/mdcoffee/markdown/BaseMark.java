@@ -59,16 +59,26 @@ public abstract class BaseMark implements Markable, Cloneable {
      * @return
      */
     public String markInclusions() {
+        return markInclusions(MarkDown.SPACE);
+    }
+    
+    /**
+     * 标记内含标记
+     * @param seperator
+     * @return
+     */
+    public String markInclusions(String seperator) {
         StringBuilder result = new StringBuilder("");
         for (int i = 0; i < this.inclusions.size(); i ++) {
             if (i == 0) {
                 result.append(inclusions.get(i).translate());  // 第一个标记不加空格
             } else {
-                result.append(MarkDown.SPACE + inclusions.get(i).translate());  // 不是第一个标记前面加空格
+                result.append(seperator + inclusions.get(i).translate());  // 不是第一个标记前面加空格
             }
         }
         return result.toString();
     }
+    
 
     /**
      * 附着下一个标记

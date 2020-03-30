@@ -23,26 +23,6 @@ public class QuotationMark extends BaseMark {
             e.printStackTrace();
         }
     }
-    
-    /**
-     * 标记内含标记
-     * @return
-     */
-    @Override
-    public String markInclusions() {
-        if (MarkUtil.isEmpty(this.inclusions)) {
-            return "";
-        }
-        StringBuilder result = new StringBuilder();
-        for (int i = 0; i < this.inclusions.size(); i ++) {
-            if (i == 0) {
-                result.append(inclusions.get(i).translate());  // 第一个标记不加换行符
-            } else {
-                result.append(MarkDown.NEXT + inclusions.get(i).translate());  // 不是第一个标记前面加换行符
-            }
-        }
-        return result.toString();
-    }
 
     @Override
     public void mark() {
@@ -52,7 +32,7 @@ public class QuotationMark extends BaseMark {
          * 先解析内含标记，
          * 然后在解析出来的每一行文本前加上'> '字符
          */
-        String strInclusion = this.markInclusions();  // 获取标记后的内含标记文本内容
+        String strInclusion = this.markInclusions(MarkDown.NEXT);  // 获取标记后的内含标记文本内容
         String[] markInclusions = strInclusion.split(String.valueOf(MarkDown.NEXT));  // 获取标记后的内含标记文本内容拆分出来的字符串数组
         
         StringBuilder quotation = new StringBuilder();
