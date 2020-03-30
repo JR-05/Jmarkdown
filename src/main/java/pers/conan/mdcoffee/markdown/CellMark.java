@@ -1,7 +1,5 @@
 package pers.conan.mdcoffee.markdown;
 
-import java.util.ArrayList;
-
 import pers.conan.mdcoffee.exception.DisablePutException;
 import pers.conan.mdcoffee.util.MarkUtil;
 

@@ -6,41 +6,34 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 
+import pers.conan.mdcoffee.exception.DisablePutException;
 import pers.conan.mdcoffee.markdown.BaseMark;
 import pers.conan.mdcoffee.markdown.Markable;
 import pers.conan.mdcoffee.markdown.OrderMark;
 import pers.conan.mdcoffee.markdown.TextMark;
+import pers.conan.mdcoffee.markdown.TodoListMark;
 import pers.conan.mdcoffee.markdown.UnOrderMark;
 import pers.conan.mdcoffee.text.Type;
 import pers.conan.mdcoffee.util.IOUtil;
 
 public class Test {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws DisablePutException {
         
         TextMark boldMark = new TextMark("This is a bold MarkDown.", Type.BOLD);
         TextMark italicMark = new TextMark("This is an italics MarkDown.", Type.ITALICS);
         TextMark deleteMark = new TextMark("This is a delete MarkDown.", Type.DELETE);
         TextMark underLineMark = new TextMark("This is an underline MarkDown.", Type.UNDER_LINE);
         
-        UnOrderMark uoMark = new UnOrderMark();
-        uoMark.put(boldMark);
-        uoMark.put(italicMark);
-        uoMark.put(deleteMark);
-        uoMark.put(underLineMark);
+        TodoListMark todoList = new TodoListMark();
+        todoList.put(boldMark);
+        todoList.put(italicMark);
+        todoList.put(deleteMark);
+        todoList.put(underLineMark);
         
-        OrderMark oMark = new OrderMark();
-        oMark.put(boldMark);
-        oMark.put(italicMark);
-        oMark.put(deleteMark);
-        oMark.put(underLineMark);
+        System.out.println(todoList.translate());
         
-        uoMark.append(oMark);
-        
-        
-        output("d:/test.md", uoMark);
-        
-        System.out.println(uoMark.translate());
+        output("d://test.md", todoList);
     }
     
     public static void output(String file, BaseMark mark) {
