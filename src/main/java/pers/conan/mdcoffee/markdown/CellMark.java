@@ -46,9 +46,6 @@ public class CellMark extends BaseMark {
             throw new DisablePutException();
         }
         
-        if (this.inclusions == null) {
-            this.inclusions = new ArrayList<BaseMark>();
-        }
         this.inclusions.add(inclusion);
     }
 

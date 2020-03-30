@@ -23,6 +23,26 @@ public class QuotationMark extends BaseMark {
             e.printStackTrace();
         }
     }
+    
+    /**
+     * 标记内含标记
+     * @return
+     */
+    @Override
+    public String markInclusions() {
+        if (MarkUtil.isEmpty(this.inclusions)) {
+            return "";
+        }
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < this.inclusions.size(); i ++) {
+            if (i == 0) {
+                result.append(inclusions.get(i).translate());  // 第一个标记不加换行符
+            } else {
+                result.append(MarkDown.NEXT + inclusions.get(i).translate());  // 不是第一个标记前面加换行符
+            }
+        }
+        return result.toString();
+    }
 
     @Override
     public void mark() {
