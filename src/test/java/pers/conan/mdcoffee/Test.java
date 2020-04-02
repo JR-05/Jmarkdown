@@ -10,6 +10,7 @@ import pers.conan.mdcoffee.exception.DisablePutException;
 import pers.conan.mdcoffee.markdown.BaseMark;
 import pers.conan.mdcoffee.markdown.TextMark;
 import pers.conan.mdcoffee.markdown.TodoListMark;
+import pers.conan.mdcoffee.markdown.TodoMark;
 import pers.conan.mdcoffee.text.Type;
 import pers.conan.mdcoffee.util.IOUtil;
 
@@ -23,10 +24,20 @@ public class Test {
         TextMark underLineMark = new TextMark("This is an underline MarkDown.", Type.UNDER_LINE);
         
         TodoListMark todoList = new TodoListMark();
-        todoList.put(boldMark);
+        /*todoList.put(boldMark);
         todoList.put(italicMark);
         todoList.put(deleteMark);
-        todoList.put(underLineMark);
+        todoList.put(underLineMark);*/
+        
+        todoList.put("Hello World. This is Java.");
+        todoList.put("Hello World. This is MarkDown.");
+        
+        TodoMark todo = new TodoMark("Hello World. This is Java.", true);
+        
+        TodoMark todo1 = new TodoMark("Java:从入门到放弃", false);
+        
+        todoList.put(todo);
+        todoList.put(todo1);
         
         System.out.println(todoList.translate());
         
