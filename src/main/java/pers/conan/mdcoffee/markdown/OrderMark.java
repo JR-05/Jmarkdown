@@ -34,7 +34,7 @@ public class OrderMark extends BaseMark {
     @Override
     public void mark() {
         StringBuilder translate = new StringBuilder();
-        String[] inclusion = this.markInclusions().split(String.valueOf(MarkDown.NEXT));  // 解析内含标记
+        String[] inclusion = this.markInclusions(MarkDown.NEXT).split(String.valueOf(MarkDown.NEXT));  // 解析内含标记
         
         int index = 0;  // 声明索引
         for (int i = 0; i < inclusion.length; i ++) {
@@ -59,26 +59,6 @@ public class OrderMark extends BaseMark {
         }
         this.translated = translate.toString();
 
-    }
-    
-    /**
-     * 标记内含标记
-     * @return
-     */
-    @Override
-    public String markInclusions() {
-        if (MarkUtil.isEmpty(this.inclusions)) {
-            return "";
-        }
-        StringBuilder result = new StringBuilder();
-        for (int i = 0; i < this.inclusions.size(); i ++) {
-            if (i == 0) {
-                result.append(inclusions.get(i).translate());  // 第一个标记不加换行符
-            } else {
-                result.append(MarkDown.NEXT + inclusions.get(i).translate());  // 不是第一个标记前面加换行符
-            }
-        }
-        return result.toString();
     }
 
 }

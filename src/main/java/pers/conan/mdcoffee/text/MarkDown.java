@@ -6,7 +6,7 @@ package pers.conan.mdcoffee.text;
 public class MarkDown {
     
     /** 空格 */
-    public static final char SPACE = ' ';
+    public static final String SPACE = " ";
     
     /** HTML类型的空格 */
     public static final String HTML_SPACE = "&nbsp;";
@@ -63,7 +63,7 @@ public class MarkDown {
     public static final char DOUBLE_QUOTATION = '\"';
     
     /** 换行 */
-    public static final char NEXT = '\r';
+    public static final String NEXT = "\r";
     
     /** 粗体 */
     public static final String BOLD = "**";

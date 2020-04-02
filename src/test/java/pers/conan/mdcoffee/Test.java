@@ -8,11 +8,8 @@ import java.io.OutputStreamWriter;
 
 import pers.conan.mdcoffee.exception.DisablePutException;
 import pers.conan.mdcoffee.markdown.BaseMark;
-import pers.conan.mdcoffee.markdown.Markable;
-import pers.conan.mdcoffee.markdown.OrderMark;
 import pers.conan.mdcoffee.markdown.TextMark;
 import pers.conan.mdcoffee.markdown.TodoListMark;
-import pers.conan.mdcoffee.markdown.UnOrderMark;
 import pers.conan.mdcoffee.text.Type;
 import pers.conan.mdcoffee.util.IOUtil;
 

@@ -12,7 +12,7 @@ import pers.conan.mdcoffee.text.Type;
  * 其他标记类型的父类
  * @author Conan
  */
-public abstract class BaseMark implements Markable, Cloneable {
+public abstract class BaseMark implements Markable {
     
     /**
      * 标记类型
@@ -59,16 +59,26 @@ public abstract class BaseMark implements Markable, Cloneable {
      * @return
      */
     public String markInclusions() {
+        return markInclusions(MarkDown.SPACE);
+    }
+    
+    /**
+     * 标记内含标记
+     * @param seperator
+     * @return
+     */
+    public String markInclusions(String seperator) {
         StringBuilder result = new StringBuilder("");
         for (int i = 0; i < this.inclusions.size(); i ++) {
             if (i == 0) {
                 result.append(inclusions.get(i).translate());  // 第一个标记不加空格
             } else {
-                result.append(MarkDown.SPACE + inclusions.get(i).translate());  // 不是第一个标记前面加空格
+                result.append(seperator + inclusions.get(i).translate());  // 不是第一个标记前面加空格
             }
         }
         return result.toString();
     }
+    
 
     /**
      * 附着下一个标记
@@ -76,12 +86,7 @@ public abstract class BaseMark implements Markable, Cloneable {
      */
     public void append(BaseMark next) {
         if (this.next == null) {  // 没有下一个标记
-            try {
-                this.next = (BaseMark) next.clone();
-            } catch (CloneNotSupportedException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
+            this.next = (BaseMark) next;
         } else {  // 有下一个标记
             this.next.append(next);
         }
