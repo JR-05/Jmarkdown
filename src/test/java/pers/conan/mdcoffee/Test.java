@@ -7,10 +7,7 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 
 import pers.conan.mdcoffee.exception.DisablePutException;
-import pers.conan.mdcoffee.markdown.BaseMark;
-import pers.conan.mdcoffee.markdown.TextMark;
-import pers.conan.mdcoffee.markdown.TodoListMark;
-import pers.conan.mdcoffee.markdown.TodoMark;
+import pers.conan.mdcoffee.markdown.*;
 import pers.conan.mdcoffee.text.Type;
 import pers.conan.mdcoffee.util.IOUtil;
 
@@ -38,10 +35,19 @@ public class Test {
         
         todoList.put(todo);
         todoList.put(todo1);
+
+        TopMark top = new TopMark();  // 声明顶层标记
+        top.put(todoList);
+        top.put(boldMark);
+        top.put(italicMark);
+        top.put(deleteMark);
+        top.put(underLineMark);
+
+        System.out.println("Before output.");
         
-        System.out.println(todoList.translate());
-        
-        output("c://test.md", todoList);
+        output("d://test.md", top);
+
+        System.out.println("After output.");
     }
     
     public static void output(String file, BaseMark mark) {

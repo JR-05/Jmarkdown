@@ -9,8 +9,8 @@
         <module name="markdowncoffee-1.0-SNAPSHOT" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="markdowncoffee-1.0-SNAPSHOT" target="1.5" />
+    <bytecodeTargetLevel target="10">
+      <module name="markdowncoffee-1.0-SNAPSHOT" target="10" />
     </bytecodeTargetLevel>
   </component>
 </project>

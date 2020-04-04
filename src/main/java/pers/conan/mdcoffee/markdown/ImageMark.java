@@ -95,9 +95,6 @@ public class ImageMark extends BaseMark {
     @Override
     public String translate() {
         this.mark();
-        if (this.next != null) {
-            return this.translated + MarkDown.NEXT + this.next.translate();
-        }
         return this.translated;
     }
 

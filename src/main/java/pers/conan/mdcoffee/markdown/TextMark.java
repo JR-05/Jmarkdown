@@ -36,7 +36,7 @@ public class TextMark extends BaseMark {
                     this.translated = MarkDown.ITATLICS + this.markInclusions() + MarkDown.ITATLICS;
                     break;
                 case Type.BOLD_ITALICS :
-                    this.translated = MarkDown.ITATLICS + this.markInclusions() + MarkDown.ITATLICS;
+                    this.translated = MarkDown.BOLD_ITATLICS + this.markInclusions() + MarkDown.ITATLICS;
                     break;
                 case Type.DELETE :
                     this.translated = MarkDown.DELETE + this.markInclusions() + MarkDown.DELETE;
@@ -57,7 +57,7 @@ public class TextMark extends BaseMark {
                     this.translated = MarkDown.ITATLICS + this.text + MarkDown.ITATLICS;
                     break;
                 case Type.BOLD_ITALICS :
-                    this.translated = MarkDown.ITATLICS + this.text + MarkDown.ITATLICS;
+                    this.translated = MarkDown.BOLD_ITATLICS + this.text + MarkDown.BOLD_ITATLICS;
                     break;
                 case Type.DELETE :
                     this.translated = MarkDown.DELETE + this.text + MarkDown.DELETE;
@@ -75,9 +75,6 @@ public class TextMark extends BaseMark {
     @Override
     public String translate() {
         this.mark();
-        if (this.next != null) {
-            return this.translated + MarkDown.NEXT + this.next.translate();
-        }
         return this.translated;
     }
 
