@@ -96,14 +96,5 @@ public class TodoMark extends BaseMark {
         
         this.inclusions.add(inclusion);
     }
-    
-    /**
-     * 附着下一个标记
-     * @param mark
-     */
-    @Override
-    public void append(BaseMark next) {
-        // 待办事项没有下一个标记
-    }
 
 }

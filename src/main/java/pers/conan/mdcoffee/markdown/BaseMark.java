@@ -29,12 +29,7 @@ public abstract class BaseMark implements Markable {
      * 转换后的内容
      */
     protected String translated = "";
-    
-    /**
-     * 下一个标记
-     */
-    protected BaseMark next;
-    
+
     /**
      * 内含标记集合
      */
@@ -47,11 +42,8 @@ public abstract class BaseMark implements Markable {
      * @return
      */
     public String translate() {
-        this.mark();
-        if (this.next != null) {
-            return this.translated + MarkDown.NEXT + this.next.translate();
-        }
-        return this.translated;
+        this.mark();  // 完成标记
+        return this.translated;  // 返回标记后的文本
     }
     
     /**
@@ -78,19 +70,7 @@ public abstract class BaseMark implements Markable {
         }
         return result.toString();
     }
-    
 
-    /**
-     * 附着下一个标记
-     * @param mark
-     */
-    public void append(BaseMark next) {
-        if (this.next == null) {  // 没有下一个标记
-            this.next = (BaseMark) next;
-        } else {  // 有下一个标记
-            this.next.append(next);
-        }
-    }
 
     /**
      * 添加内含标记
@@ -136,14 +116,6 @@ public abstract class BaseMark implements Markable {
 
     public void setTranslated(String translated) {
         this.translated = translated;
-    }
-
-    public BaseMark getNext() {
-        return next;
-    }
-
-    public void setNext(BaseMark next) {
-        this.next = next;
     }
 
 }
