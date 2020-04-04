@@ -41,7 +41,7 @@ public class Test {
         
         System.out.println(todoList.translate());
         
-        output("d://test.md", todoList);
+        output("c://test.md", todoList);
     }
     
     public static void output(String file, BaseMark mark) {
