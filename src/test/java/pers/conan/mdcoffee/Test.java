@@ -44,6 +44,8 @@ public class Test {
         top.put(underLineMark);
 
         System.out.println("Before output.");
+
+        System.out.println(top.translate());
         
         output("d://test.md", top);
 

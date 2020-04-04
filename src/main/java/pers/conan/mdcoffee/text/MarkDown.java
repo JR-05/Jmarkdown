@@ -63,7 +63,7 @@ public class MarkDown {
     public static final char DOUBLE_QUOTATION = '\"';
     
     /** 换行 */
-    public static final String NEXT = "\r";
+    public static final String NEXT = "\r\n";
     
     /** 粗体 */
     public static final String BOLD = "**";
