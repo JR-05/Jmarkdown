@@ -9,15 +9,14 @@
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  下载本jar文件
+2.  导入jar文件
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  声明标记对象 `TopMark top = new TopMark();`
+2.  输出文本内容 `IOUtil.output(String fileName, BaseMark mark, String charsetName)`
+3.  参考[API](API.md)文件
 
 #### 参与贡献
 
