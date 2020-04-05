@@ -13,7 +13,7 @@ public class DeleteMark extends TextMark {
      * @param text
      */
     public DeleteMark(String text) {
-        super(text, Type.BOLD_ITALICS);
+        super(text, Type.DELETE);
     }
     
     public DeleteMark() {

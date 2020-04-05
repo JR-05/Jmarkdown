@@ -13,7 +13,7 @@ public class UnderLineMark extends TextMark {
      * @param text
      */
     public UnderLineMark(String text) {
-        super(text, Type.BOLD_ITALICS);
+        super(text, Type.UNDER_LINE);
     }
     
     public UnderLineMark() {
