@@ -33,10 +33,10 @@ public class TextMark extends BaseMark {
                     this.translated = MarkDown.BOLD + this.markInclusions() + MarkDown.BOLD;
                     break;
                 case Type.ITALICS :
-                    this.translated = MarkDown.ITATLICS + this.markInclusions() + MarkDown.ITATLICS;
+                    this.translated = MarkDown.ITALICS + this.markInclusions() + MarkDown.ITALICS;
                     break;
                 case Type.BOLD_ITALICS :
-                    this.translated = MarkDown.BOLD_ITATLICS + this.markInclusions() + MarkDown.ITATLICS;
+                    this.translated = MarkDown.BOLD_ITATLICS + this.markInclusions() + MarkDown.BOLD_ITATLICS;
                     break;
                 case Type.DELETE :
                     this.translated = MarkDown.DELETE + this.markInclusions() + MarkDown.DELETE;

@@ -68,9 +68,9 @@ public class MarkDown {
     /** 粗体 */
     public static final String BOLD = "**";
     /** 斜体 */
-    public static final String ITATLICS = "*";
+    public static final String ITALICS = "*";
     /** 粗斜体 */
-    public static final String BOLD_ITATLICS = "***";
+    public static final String BOLD_ITALICS = "***";
     /** 下划线开头 */
     public static final String UNDER_LINE_1 = "<u>";
     /** 下划线结束 */
