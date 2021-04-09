@@ -27,10 +27,10 @@ public class IOUtil {
      * 把标记后的文本内容输出到文件里
      * @param fileName : 文件名
      * @param mark : 标记
-     * @param charsetName : 字符名称
+     * @param StringsetName : 字符名称
      * @return Boolean true:写入成功, false:写入失败
      */
-    public static boolean output(String fileName, BaseMark mark, String charsetName) {
+    public static boolean output(String fileName, BaseMark mark, String StringsetName) {
         boolean result = true;  // 初始化返回值
 
         FileOutputStream fos = null;
@@ -39,7 +39,7 @@ public class IOUtil {
 
         try {
             fos = new FileOutputStream(fileName);
-            osw = new OutputStreamWriter(fos, charsetName);
+            osw = new OutputStreamWriter(fos, StringsetName);
             bw = new BufferedWriter(bw);
 
             // 写入文件

@@ -12,6 +12,6 @@ public class Text {
     public static final String SPACE_STR = " ";
     
     /** 空格字节 */
-    public static final char SPACE = ' ';
+    public static final String SPACE = " ";
     
 }

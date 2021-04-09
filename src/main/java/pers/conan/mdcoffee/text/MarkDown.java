@@ -12,16 +12,16 @@ public class MarkDown {
     public static final String HTML_SPACE = "&nbsp;";
     
     /** 星号 */
-    public static final char ASTER = '*';
+    public static final String ASTER = "*";
     
     /** 加号 */
-    public static final char PLUS = '+';
+    public static final String PLUS = "+";
     
     /** 减号 */
-    public static final char MINUS = '-';
+    public static final String MINUS = "-";
     
     /** 点 */
-    public static final char POINT = '.';
+    public static final String POINT = ".";
     
     /** 下划线 */
     public static final String UNDER_LINE = "_";
@@ -33,34 +33,34 @@ public class MarkDown {
     public static final String FOUR_SPACES = "    ";
     
     /** 左括号 */
-    public static final char LEFT_BRACKET = '(';
+    public static final String LEFT_BRACKET = "(";
     
     /** 右括号 */
-    public static final char RIGHT_BRACKET = ')';
+    public static final String RIGHT_BRACKET = ")";
     
     /** 左方括号 */
-    public static final char LEFT_SB = '[';
+    public static final String LEFT_SB = "[";
     
     /** 右方括号 */
-    public static final char RIGHT_SB = ']';
+    public static final String RIGHT_SB = "]";
     
     /** 左尖括号 */
-    public static final char LEFT_AB = '<';
+    public static final String LEFT_AB = "<";
     
     /** 右尖括号 */
-    public static final char RIGHT_AB = '>';
+    public static final String RIGHT_AB = ">";
     
     /** 竖线 */
-    public static final char VERTICAL_LINE = '|';
+    public static final String VERTICAL_LINE = "|";
     
     /** 感叹号 */
-    public static final char EXCLAMATION = '!';
+    public static final String EXCLAMATION = "!";
     
     /** 单引号 */
-    public static final char SINGLE_QUOTATION = '\'';
+    public static final String SINGLE_QUOTATION = "\'";
     
     /** 双引号 */
-    public static final char DOUBLE_QUOTATION = '\"';
+    public static final String DOUBLE_QUOTATION = "\"";
     
     /** 换行 */
     public static final String NEXT = "\r\n";
@@ -82,7 +82,7 @@ public class MarkDown {
     
 
     /** Title H1 */
-    public static final char TITLE_H1 = '#';
+    public static final String TITLE_H1 = "#";
     
     /** Title H2 */
     public static final String TITLE_H2 = "##";
@@ -100,13 +100,13 @@ public class MarkDown {
     public static final String TITLE_H6 = "######";
     
     /** Title H1= */
-    public static final char TITLE_H1_EUQAL = '=';
+    public static final String TITLE_H1_EUQAL = "=";
     
     /** Title H2- */
-    public static final char TITLE_H2_DASH = '-';
+    public static final String TITLE_H2_DASH = "-";
     
     /** 代码 Code ` */
-    public static final char CODE_ONE = '`';
+    public static final String CODE_ONE = "`";
     
     /** 代码 Code ``` */
     public static final String CODE_THREE = "```";

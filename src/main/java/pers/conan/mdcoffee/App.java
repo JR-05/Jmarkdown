@@ -2,7 +2,6 @@ package pers.conan.mdcoffee;
 
 /**
  * Hello world!
- *
  */
 public class App 
 {

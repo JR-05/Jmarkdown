@@ -88,7 +88,7 @@ public class ImageMark extends BaseMark {
                     + MarkDown.DOUBLE_QUOTATION  // 双引号
                     );
         }
-        image.append(MarkDown.LEFT_BRACKET);  // 右括号
+        image.append(MarkDown.RIGHT_BRACKET);  // 右括号
         this.translated = image.toString();
     }
 

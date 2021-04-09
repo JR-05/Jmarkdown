@@ -17,7 +17,7 @@ public class TextMark extends BaseMark {
     }
     
     public TextMark(String text) {
-        super();
+        super(text);
         this.type = Type.OTHER;
     }
     

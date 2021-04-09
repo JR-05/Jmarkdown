@@ -11,7 +11,7 @@ import pers.conan.mdcoffee.markdown.*;
 import pers.conan.mdcoffee.text.Type;
 import pers.conan.mdcoffee.util.IOUtil;
 
-public class Test {
+public class TestMark {
 
     public static void main(String[] args) throws DisablePutException {
         

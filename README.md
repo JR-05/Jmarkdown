@@ -15,7 +15,7 @@
 #### 使用说明
 
 1.  声明标记对象 `TopMark top = new TopMark();`
-2.  输出文本内容 `IOUtil.output(String fileName, BaseMark mark, String charsetName)`
+2.  输出文本内容 `IOUtil.output(String fileName, BaseMark mark, String StringsetName)`
 3.  参考[API](API.md)文件
 
 #### 参与贡献
